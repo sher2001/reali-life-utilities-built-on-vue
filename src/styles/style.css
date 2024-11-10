@@ -16,5 +16,5 @@
 
 .fixed-max-height {
   max-height: 500px;
-  overflow: hidden; /* temporarily */
+  overflow: auto; /* temporarily */
 }
