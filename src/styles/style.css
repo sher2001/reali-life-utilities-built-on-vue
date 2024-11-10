@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.img-clickable {
+  @apply cursor-pointer rounded-md hover:shadow-lg hover:shadow-indigo-800;
+}
+
+.ui-button {
+  @apply img-clickable bg-black text-white flex-center;
+}
+
+.fixed-max-height {
+  max-height: 500px;
+  overflow: hidden; /* temporarily */
+}
