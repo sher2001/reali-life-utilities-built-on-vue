@@ -16,5 +16,27 @@
 
 .fixed-max-height {
   max-height: 500px;
-  overflow: auto; /* temporarily */
+  overflow: auto;
+}
+
+@media (min-width: 1024px) {
+  .fixed-max-height {
+    max-height: 600px;
+  }
+}
+
+.small-img {
+  @apply h-60 w-60 lg:w-auto;
+}
+
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-lg  bg-slate-500;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply w-3 rounded-3xl bg-slate-900;
 }

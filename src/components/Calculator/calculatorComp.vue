@@ -1,3 +1,5 @@
 <script setup></script>
 
-<template>Calculator</template>
+<template>
+  <div class="lg:block hidden">Calculator</div>
+</template>

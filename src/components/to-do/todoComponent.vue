@@ -15,8 +15,7 @@ const removeTask = (index) => tasks.value.splice(index, 1)
 </script>
 <template>
   <div class="w-full h-auto max-h-screen flex-center gap-4 justify-between">
-    <!-- left pannel -->
-    <div class="w-1/2 flex-center flex-col gap-2">
+    <div class="w-full lg:w-1/2 flex-center flex-col gap-2">
       <!-- add task bar -->
       <div class="w-full flex-center gap-2">
         <input
@@ -27,14 +26,14 @@ const removeTask = (index) => tasks.value.splice(index, 1)
           autofocus
           placeholder="add your task title here and press enter"
         />
-        <div @click="addTask" class="size-8 ui-button">
+        <div @click="addTask" class="size-8 ui-button text-indigo-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-6"
+            class="size-5"
           >
             <path
               stroke-linecap="round"
@@ -45,7 +44,7 @@ const removeTask = (index) => tasks.value.splice(index, 1)
         </div>
       </div>
       <!-- tasks list -->
-      <div class="w-full p-2 fixed-max-height rounded-md grid grid-cols-2 gap-4">
+      <div class="w-full mt-3 pr-2 fixed-max-height rounded-md grid grid-cols-2 gap-4">
         <!-- evrything should repeat here -->
         <div class="w-full ui-button" v-for="(task, i) in tasks" :key="i">
           <div class="w-full p-5 h-auto mt-2 flex items-center justify-between">
