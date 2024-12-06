@@ -31,7 +31,9 @@ const submitForm = () => {
 }
 
 const generatePassword = () => {
-  document.getElementById('password').type = 'text'
+  if (document.getElementById('password').type == 'password') {
+    document.getElementById('password').type = 'text'
+  }
   formData.value.password =
     'ABCDEFGHIJKLMNOPQRSTabcdefghijklmnopqrst0123456789!@#$%^&*()_+.,|=-;<>?:[]{}'
       .split('')
@@ -48,10 +50,7 @@ const reSubmit = () => (submitted.value = false)
 <template>
   <div class="pt-10 w-full h-auto max-h-screen flex-center gap-4 justify-between">
     <div class="w-full flex-center">
-      <form
-        @submit.prevent="submitForm"
-        class="w-full md:w-3/4 lg:w-1/2 bg-gray-700 text-white rounded-3xl"
-      >
+      <form @submit.prevent class="w-full md:w-3/4 lg:w-1/2 bg-gray-700 text-white rounded-3xl">
         <!-- from groups -->
         <div class="w-full flex-center flex-col gap-4 p-10">
           <!-- name group -->
@@ -110,8 +109,12 @@ const reSubmit = () => (submitted.value = false)
             <div class="flex justify-between mr-1">
               <label for="password">Password</label>
               <!-- generate password -->
-              <div class="w-fit ui-button p-1">
-                <button @click="generatePassword">
+              <div class="w-fit">
+                <button
+                  :disabled="submitted"
+                  @click="generatePassword"
+                  class="ui-button p-1 disabled-field"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -147,6 +150,7 @@ const reSubmit = () => (submitted.value = false)
             <button
               :disabled="!isFormValid || submitted"
               type="submit"
+              @click="submitForm"
               class="disabled-field w-full ui-button px-2 py-3"
             >
               Submit
