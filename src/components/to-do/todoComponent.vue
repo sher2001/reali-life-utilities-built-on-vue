@@ -44,7 +44,7 @@ const removeTask = (index) => tasks.value.splice(index, 1)
         </div>
       </div>
       <!-- tasks list -->
-      <div class="w-full mt-3 pr-2 fixed-max-height rounded-md grid grid-cols-2 gap-4">
+      <div class="w-full mt-3 pr-2 fixed-max-height rounded-md grid md:grid-cols-2 gap-4">
         <!-- evrything should repeat here -->
         <div class="w-full ui-button" v-for="(task, i) in tasks" :key="i">
           <div class="w-full p-5 h-auto mt-2 flex items-center justify-between">

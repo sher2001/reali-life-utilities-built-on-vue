@@ -7,7 +7,7 @@
 }
 
 .img-clickable {
-  @apply cursor-pointer rounded-md hover:shadow-lg hover:shadow-indigo-800;
+  @apply cursor-pointer rounded-md hover:shadow-lg hover:shadow-indigo-800 select-none;
 }
 
 .ui-button {
@@ -32,6 +32,8 @@
 .small-img {
   @apply h-60 w-60 lg:w-auto;
 }
+
+/* Scroll bars */
 
 ::-webkit-scrollbar {
   @apply w-2;
